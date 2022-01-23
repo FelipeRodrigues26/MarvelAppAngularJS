@@ -1,0 +1,15 @@
+<div id="person-details">
+  <div class="card" ng-style="{'width': '18rem', 'margin-top': '5%','margin-bottom':'5%'}">
+    <img ng-if="$ctrl.imageUrl" ng-src="{{$ctrl.imageUrl}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Personagem: </h6>
+      <p class="card-text">{{$ctrl.personagem.name}}</p>
+      <span ng-if="$ctrl.personagem.description==''">Sem descricao</span>
+      <p class="card-text" [align]="'justify'">{{$ctrl.personagem.description}}</p>
+      <a ng-style="{'float': 'left', 'width': '6rem'}" class="btn btn-lg btn-primary"
+      href="#!/personagem/lista">Voltar</a>
+      <button style="float: right; width: 6rem;" class="btn btn-lg btn-primary" ng-click="$ctrl.open()">Mais</button>
+    </div>
+  </div>
+ 
+ 

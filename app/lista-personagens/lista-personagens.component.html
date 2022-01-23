@@ -1,0 +1,26 @@
+<div class="lista">
+    <div class="card" ng-style="{'width': '100%', 'margin-top': '5%', 'margin-bottom': '5%'}">
+        <div id="search"> 
+           <input ng-model="$ctrl.searchName" class="form-control mr-sm-2" type="text" placeholder=" Search" 
+           aria-label="Search">
+           <button class="buttonStyle" ng-click="$ctrl.getPersonagensByName()">Buscar</button>
+        </div>
+        <div class="card-header">
+            Lista de Personagem
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Marvel World</h5>
+            <ul class="list-group" ng-repeat="person in $ctrl.personagens">
+                <li class="list-group-item row">
+                    <span>{{person.name}}</span>
+                    <a  ng-style="{'float':'right','width': '8rem'}" class="buttonStyle"
+                    href="#!/personagem/detalhes/{{person.id}}"> Abrir detalhes</a>
+                </li>
+            </ul>
+            <span ng-if="$ctrl.results==0">Sem resultados</span>
+            <div class="card-footer">
+               
+            </div>
+        </div>
+    </div>
+</div>

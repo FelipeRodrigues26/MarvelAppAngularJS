@@ -1,0 +1,255 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');	
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+#main {
+  display: grid; 
+  grid-template-areas: "header header" "nav nav" "aside aside";
+} 
+
+.mainHeader {
+  grid-area: header;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: end;
+  width: 100%;
+  background-color: #080808;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #b10303;
+ 
+}
+.headerName{
+  color: snow;
+  font-size: 20pt;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: bold;
+}
+.mainHeader h4{
+  font-family: 'Orbitron', sans-serif;
+  font-style:normal;
+  font-size: 17pt;
+  letter-spacing: 2px;
+  color: snow;
+  
+}
+.mainHeader #logout{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-style:normal;
+  font-size: 12pt;
+  letter-spacing: 2px;
+  color: snow;
+}
+
+button{
+  color: white;
+  background-color: #292929;
+}
+button:hover{
+  color:black;
+}
+#menu button{
+  width: 60px;
+  height: 77px;
+  background-color: #111111;
+}
+
+#poder{
+      color: red;
+      text-shadow: 0.0em 0.0em 0.4em red;
+      letter-spacing: 5px;
+}
+
+.welcome { 
+  grid-area: nav;
+  background-image: url('../img/fundo.png');
+  background-repeat: no-repeat;
+  font-size: 16pt;
+  color: #e7e6e6;
+  font-family: 'Ubuntu',sans-serif;
+  height: 100%;
+  width: 100%;
+  padding-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 95vh;
+}
+.welcome button{
+  padding: 0;
+  border-radius: 5px;
+  width: 200px;
+  height: 60px;
+  margin-top: 15%;
+}
+.welcome p{
+  margin-top: 10px;
+}
+.buttonStyle {
+  background-color:  rgba(7, 7, 7, 0.74);
+  color: rgb(255, 251, 251);
+  margin-top: 2%;
+  border: 1px solid rgba(119, 119, 119, 0.534);
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.buttonStyle:hover {
+  transition: 0.2s;
+  background-color: #000000bb;
+  border: 1px solid rgba(0, 0, 0, 0.452);
+      color: rgb(95, 95, 95);
+}
+.mainNav { 
+  grid-area: nav;
+  background-image: linear-gradient(#000000, #000000fa);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 95vh;
+  
+}
+
+.mainAside {
+  grid-area: aside;
+  min-height: 15vh;
+  background: #111111;
+ text-align: center;
+ padding: 3%;
+ position: relative;    
+}
+
+
+
+#fire{
+      float: right;
+      padding: 2px 0px 0px 10px ;
+      text-shadow: 0.0em 0.0em 0.4em red;
+}
+  
+.txtRodape, a{
+      color: snow;
+      margin: 0%;
+      padding: 0%;
+      display: inline;
+      font-family: 'Ubuntu', sans-serif; 
+      font-size: 12pt;
+}
+.txtRodape, a:hover{
+      color: #000000;
+}
+  ul, li{
+      display: inline;
+      margin: 5%;
+      text-decoration: none;
+}
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #060707;
+    color: white;
+    font-weight: 600;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #707479;
+  }
+
+ 
+
+  /* Responsive */
+
+  @media screen and (max-width: 950px) {
+    .mainHeader {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+
+    .mainHeader {
+        grid-area: header;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .headerTitulo{
+        font-size: 18pt;
+        text-align: center;
+    }
+    .mainHeader h4{
+        font-size: 12pt;
+        text-align: center;
+    }
+    
+    .welcome h1{
+        font-size: 20pt;
+    }
+
+    .welcome button{
+        width: 130px;
+        height: 40px;
+    }
+  
+  }
+
+/*lista personagens css*/
+#search{
+  margin : 4%;
+}
+
+#search button{
+  padding: 6px;
+  margin-top: 5px;
+  width: 80px;
+}
+
+@media screen and (max-width: 575px) {
+  .lista button{
+      float: initial ;
+  }   
+}
+

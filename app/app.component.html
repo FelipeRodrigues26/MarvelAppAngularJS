@@ -1,0 +1,42 @@
+<section id="main">
+  <div class="mainHeader">
+      <div class="headerName">
+        <h2>Marvel</h2> 
+      </div> 
+      <h4>descubra  o <span id="poder">PODER</span> desse universo.</h4>
+      <div id="logout">
+          <button ng-click="$ctrl.logout()" ng-if="$ctrl.userLogged"> logout </button>
+      </div>
+  </div>
+  
+  <div class="mainNav">
+    <div class="welcome" ng-if="$ctrl.viewWelcome">
+        <h1>Conheça agora!</h1>
+        <a href="#!/personagem/lista" class="card-link"><button class="buttonStyle" ng-click="$ctrl.onViewWelcome()">Inicio</button></a>
+      
+    </div>
+   
+    <div ng-if="!$ctrl.viewWelcome" ng-view></div>
+  
+  </div>
+
+  <aside class="mainAside">
+        
+        <div class="conteudoEsquerda">
+            
+           
+      <nav>
+          <ul class="txtRodape">
+              <li><a href="">Fale conosco</a></li>
+              <li><a href="">Nosso e-mail</a></li>
+              <li><a href="">Desenvolvedores</a></li>
+              <li><a href="">&copy; Copyright 2022</a></li>
+          </ul>
+      </nav>
+         
+       </div>
+
+  </aside>
+
+</section>
+

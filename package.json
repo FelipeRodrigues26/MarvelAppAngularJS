@@ -34,7 +34,8 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
-  
+    "update-deps": "npm update",
+    "prestart": "npm install",
    
   }
 }

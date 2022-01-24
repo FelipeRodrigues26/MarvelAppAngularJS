@@ -14,17 +14,17 @@
     "angular-animate": "1.8.x",
     "angular-resource": "1.8.x",
     "angular-route": "1.8.x",
-    "angular-ui-bootstrap": "^2.5.6",
-    "ejs": "^2.3.1",
-    "express": "^4.17.2"
+    "angular-ui-bootstrap": "^2.5.6"
   },
   "devDependencies": {
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "angular-mocks": "1.8.x",
     "cpx": "^1.5.0",
+    "cross-env": "^7.0.3",
     "http-server": "^0.11.1",
     "jasmine-core": "~3.10.0",
+    "express": "^4.17.2",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
@@ -34,5 +34,15 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
+    "update-deps": "cross-env NODE_ENV=development npm update",
+    "prestart": "cross-env NODE_ENV=development npm install",
+    "start": "cross-env NODE_ENV=development http-server ./app -a localhost -p 8000 -c-1",
+    "pretest": "cross-env NODE_ENV=development npm install",
+    "test": "cross-env NODE_ENV=development karma start karma.conf.js",
+    "test-single-run": " cross-env NODE_ENV=development npm test -- --single-run",
+    "preupdate-webdriver": "cross-env NODE_ENV=development npm install",
+    "update-webdriver": "cross-env NODE_ENV=development webdriver-manager update",
+    "preprotractor": "cross-env NODE_ENV=development npm run update-webdriver",
+    "protractor": "cross-env NODE_ENV=development protractor e2e-tests/protractor.conf.js"
   }
 }

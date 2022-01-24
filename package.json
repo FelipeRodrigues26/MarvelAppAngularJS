@@ -34,10 +34,11 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
-    "start": "npm install node server.js",
-    "test": "karma start karma.conf.js",
-    "test-single-run": "npm test -- --single-run",
-    "preupdate-webdriver": "npm install"
+    // "update-deps": "npm update",
+    // "prestart": "npm install",
+    // "test": "karma start karma.conf.js",
+    // "test-single-run": "npm test -- --single-run",
+    // "preupdate-webdriver": "npm install"
    
   }
 }

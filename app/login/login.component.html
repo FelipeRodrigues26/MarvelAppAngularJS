@@ -1,21 +1,22 @@
 
 
-<div [ngStyle]="{'margin-top': '10%','padding': '10%'}">
+<div ng-style="{'margin-top': '10%'}">
     <div ng-show="$ctrl.alertVisible" uib-alert ng-class="$ctrl.alertType">{{$ctrl.msgSucessError}}</div>
     <div class="form-floating ms-12">
-        <h3>Login </h3>
+      <div class="float-left">
+        <h3 ng-style="{'color': '#fff'}" class="float-left">Login </h3>
+      </div>
+        <i ng-style="{'color': '#fff'}" class="ml-3 mt-2 fas fa-lock"></i>
     </div>
     <div class="form-floating mb-3">
       <input ng-model="$ctrl.user.email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating mb-3">
       <input ng-model="$ctrl.user.pass" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
     </div>
 
     <div class="d-grid">
-      <button class="btn btn-primary btn-login text-uppercase fw-bold" ng-click="$ctrl.signIn()">Entrar</button>
+      <button class="btn btn-dark btn-login text-uppercase fw-bold" ng-click="$ctrl.signIn()">Entrar</button>
     </div>
    
   </div>

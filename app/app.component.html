@@ -1,11 +1,16 @@
 <section id="main">
-  <div class="mainHeader">
-      <div class="headerName">
+  <div class="mainHeader" >
+      <div class="headerName col-md-3">
         <h2>Marvel</h2> 
       </div> 
-      <h4>descubra  o <span id="poder">PODER</span> desse universo.</h4>
-      <div id="logout" ng-if="$ctrl.userLogged">
-         <a ng-click="$ctrl.logout()" class="buttonStyle"> logout </a>
+      <h4 class="col md-6">descubra  o <span id="poder">PODER</span> desse universo.</h4>
+      <div class="col-md-3 " id="logout">
+         
+         <div>
+          <a> - </a>
+            <a ng-click="$ctrl.logout()" ng-if="$ctrl.userLogged" class="buttonStyle"> Olá, fazer logout </a>
+         </div>
+         
       </div>
   </div>
   

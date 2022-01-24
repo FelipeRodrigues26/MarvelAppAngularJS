@@ -6,11 +6,16 @@ angular.module('marvelApp')
 
 function AppComponent($location, AutenticationService){
   this.viewWelcome = true;
-
+ 
+  this.$onInit = function() {
+    this.userLogged = AutenticationService.userLogged();
+  }
+  
+  
+ 
   this.onViewWelcome = function () {
     this.viewWelcome = false;
     this.userLogged = AutenticationService.userLogged();
-   
   }
 
   this.logout = function () {

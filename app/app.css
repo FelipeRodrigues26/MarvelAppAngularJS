@@ -17,9 +17,9 @@
 .mainHeader {
   grid-area: header;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-direction: row;
-  justify-content: end;
+  justify-content: center;
   width: 100%;
   background-color: #080808;
   padding-top: 20px;
@@ -28,15 +28,18 @@
  
 }
 .headerName{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   color: snow;
   font-size: 20pt;
   font-family: 'Staatliches', cursive;
   letter-spacing: 5px;
-  margin-left: 10%;
-  margin-right: 10%;
   font-weight: bold;
 }
 .mainHeader h4{
+  text-align: center;
   font-family: 'Orbitron', sans-serif;
   font-style:normal;
   font-size: 17pt;
@@ -45,7 +48,6 @@
   
 }
 .mainHeader #logout{
-  width: 10%;
   display: flex;
   align-items: center;
   flex-direction: row;

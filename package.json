@@ -34,11 +34,7 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
-    // "update-deps": "npm update",
-    // "prestart": "npm install",
-    // "test": "karma start karma.conf.js",
-    // "test-single-run": "npm test -- --single-run",
-    // "preupdate-webdriver": "npm install"
+  
    
   }
 }

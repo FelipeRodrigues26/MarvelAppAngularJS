@@ -33,15 +33,11 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
-    "update-deps": "npm update",
     "prestart": "npm install",
-    "start": "http-server ./app -a localhost -p 8000 -c-1",
-    "pretest": "npm install",
+    "start": "node server.js",
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-tests/protractor.conf.js"
+    "preupdate-webdriver": "npm install"
+   
   }
 }

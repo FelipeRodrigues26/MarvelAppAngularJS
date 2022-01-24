@@ -28,9 +28,7 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
-    "postinstall": "npm run copy-libs",
     "update-deps": "npm update",
-    "postupdate-deps": "npm run copy-libs",
     "prestart": "npm install",
     "start": "http-server ./app -a localhost -p 8000 -c-1",
     "pretest": "npm install",

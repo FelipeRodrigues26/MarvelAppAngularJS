@@ -1,8 +1,7 @@
 
-<div ng-if="$ctrl.alertVisible" uib-alert ng-class="$ctrl.alertType">{{$ctrl.msgSucessError}}</div>
 
 <div [ngStyle]="{'margin-top': '10%','padding': '10%'}">
-
+    <div ng-show="$ctrl.alertVisible" uib-alert ng-class="$ctrl.alertType">{{$ctrl.msgSucessError}}</div>
     <div class="form-floating ms-12">
         <h3>Login </h3>
     </div>

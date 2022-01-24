@@ -15,9 +15,10 @@
         <a href="#!/personagem/lista" class="card-link"><button class="buttonStyle" ng-click="$ctrl.onViewWelcome()">Inicio</button></a>
       
     </div>
-   
-    <div ng-if="!$ctrl.viewWelcome" ng-view></div>
   
+    <div class="viewWrapper">
+      <div ng-if="!$ctrl.viewWelcome" ng-view></div>
+    </div>
   </div>
 
   <aside class="mainAside">

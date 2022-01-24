@@ -13,7 +13,7 @@ angular.module('marvelApp')
         subscriptionPersonagens = PersonagemService.getPersonagemById(id).subscribe( (response) => {
         this.personagem = response.data.results[0]  
         this.imageUrl = this.personagem.thumbnail.path+"."+this.personagem.thumbnail.extension
-        console.log(this.personagem)
+
       });
     }
   
@@ -75,7 +75,7 @@ angular.module('marvelApp')
     this.getSeriesById = function (id) {
       subscriptionPersonagens = PersonagemService.getSeriesQuadrinhosById(id).subscribe((response) => {
         this.series = response.data.results
-        console.log(this.series)
+
 
       });
     }
@@ -83,7 +83,7 @@ angular.module('marvelApp')
     this.getStoriesById = function (id) {
       subscriptionPersonagens = PersonagemService.getHistoriasQuadrinhosById(id).subscribe((response) => {
         this.stories = response.data.results
-        console.log(this.stories)
+  
       });
     }
 

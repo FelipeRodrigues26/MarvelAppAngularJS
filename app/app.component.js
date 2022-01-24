@@ -10,7 +10,7 @@ function AppComponent($location, AutenticationService){
   this.onViewWelcome = function () {
     this.viewWelcome = false;
     this.userLogged = AutenticationService.userLogged();
-    console.log(this.userLogged)
+   
   }
 
   this.logout = function () {

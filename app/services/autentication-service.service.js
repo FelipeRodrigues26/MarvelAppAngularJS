@@ -22,7 +22,7 @@ function AutenticationService($firebaseAuth,rx) {
      try {     
         return firebase.auth().signInWithEmailAndPassword(email, password)
      } catch (error) {
-        return null;
+      window.alert('Falha no login!')
      }
   }
 

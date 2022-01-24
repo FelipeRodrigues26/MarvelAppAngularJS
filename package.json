@@ -35,7 +35,11 @@
   },
   "scripts": {
     "update-deps": "npm update",
-    "prestart": "npm install"
+    "heroku-postbuild": "npm install",
+    "start": "node server.js",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "npm test -- --single-run",
+    "preupdate-webdriver": "npm install"
    
   }
 }

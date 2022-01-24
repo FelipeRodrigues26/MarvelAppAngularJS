@@ -4,8 +4,8 @@
         <h2>Marvel</h2> 
       </div> 
       <h4>descubra  o <span id="poder">PODER</span> desse universo.</h4>
-      <div id="logout">
-          <button ng-click="$ctrl.logout()" ng-if="$ctrl.userLogged"> logout </button>
+      <div id="logout" ng-if="$ctrl.userLogged">
+         <a ng-click="$ctrl.logout()" class="buttonStyle"> logout </a>
       </div>
   </div>
   

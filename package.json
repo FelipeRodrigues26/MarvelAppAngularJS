@@ -14,7 +14,8 @@
     "angular-animate": "1.8.x",
     "angular-resource": "1.8.x",
     "angular-route": "1.8.x",
-    "angular-ui-bootstrap": "^2.5.6"
+    "angular-ui-bootstrap": "^2.5.6",
+    "express": "^4.17.2"
   },
   "devDependencies": {
     "@types/jasmine": "~3.10.0",
@@ -24,7 +25,6 @@
     "cross-env": "^7.0.3",
     "http-server": "^0.11.1",
     "jasmine-core": "~3.10.0",
-    "express": "^4.17.2",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",

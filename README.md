@@ -1,4 +1,9 @@
-# AngularJS Marvel World Catalog Tutorial App
+  
+## MARVEL APP
+Utiliza diversos recursos que o framework AngularJS dispõe, tais como, componentes, controllers, templates, diretivas, databinding, routes, services, etc; e também foram utilizados observables; requisições http assincronas; autenticação via Firebase; recursos do HTML e CSS e seus frameworks, entre outras tecnologias.
+
+## App foi hospedado no heroku
+https://marvelworldapp.herokuapp.com/
 
 
 ## Prerequisites

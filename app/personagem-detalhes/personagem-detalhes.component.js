@@ -55,7 +55,7 @@ angular.module('marvelApp')
     '</p>' +
     '</div>' +
     '<div class="modal-footer">' +
-    '<button class="btn btn-primary" type="button" ng-click="$ctrl.ok(sm)">OK</button>' +
+    '<button class="btn btn-dark" type="button" ng-click="$ctrl.ok(sm)">OK</button>' +
     '</div>' +
     '</div>',
   bindings: {

@@ -1,26 +1,25 @@
-<div class="lista">
-    <div class="card" ng-style="{'width': '100%', 'min-width': '100%', 'margin-top': '5%', 'margin-bottom': '5%'}">
-        <div id="search"> 
-           <input ng-model="$ctrl.searchName" class="form-control mr-sm-2" type="text" placeholder=" Search" 
-           aria-label="Search">
-           <button class="btn btn-dark" ng-click="$ctrl.getPersonagensByName()"><i class="fas fa-search fa-xs"></i> Buscar</button>
-        </div>
-        <div class="card-header">
-            Lista de Personagem
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Marvel World</h5>
-            <ul class="list-group" ng-repeat="person in $ctrl.personagens">
-                <li class="list-group-item row">
-                    <span>{{person.name}}</span>
-                    <a class="btn btn-dark float-right"
-                    href="#!/personagem/detalhes/{{person.id}}"> Abrir detalhes <i class="fas fa-plus"></i></a>
-                </li>
-            </ul>
-            <span ng-if="$ctrl.results==0">Sem resultados</span>
-            <div class="card-footer">
-               
-            </div>
+<div class="card" id="charactListCard" ng-style="{'width': '20rem', 'min-width': '20rem', 'margin-top': '5%', 'margin-bottom': '5%'}">
+    <div id="search">
+        <input ng-model="$ctrl.searchName" class="form-control mr-sm-2" type="text" placeholder=" Search"
+            aria-label="Search">
+        <button class="btn btn-dark" ng-click="$ctrl.getPersonagensByName()"><i class="fas fa-search fa-xs"></i>
+            Buscar</button>
+    </div>
+    <div class="card-header">
+        Lista de Personagem
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Marvel World</h5>
+        <ul class="list-group" ng-repeat="person in $ctrl.personagens">
+            <li class="list-group-item">
+                <span class="float-left">{{person.name}}</span>
+                <a class="btn btn-dark float-left" href="#!/personagem/detalhes/{{person.id}}"> Abrir detalhes <i
+                        class="fas fa-plus"></i></a>
+            </li>
+        </ul>
+        <span ng-if="$ctrl.results==0">Sem resultados</span>
+        <div class="card-footer">
+
         </div>
     </div>
 </div>

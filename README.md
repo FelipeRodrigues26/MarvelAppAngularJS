@@ -1,6 +1,6 @@
   
 ## MARVEL APP
-Utiliza diversos recursos que o framework AngularJS dispõe, tais como, componentes, controllers, templates, diretivas, databinding, routes, services, etc; e também foram utilizados observables com RXJS; requisições http assincronas; autenticação via Firebase; recursos do HTML e CSS e seus frameworks seguindo o mobile first e responsive layout, entre outras tecnologias. No ambiente de teste foram utilizados o Karma, Jasmin, Angular Mocks.
+Utiliza diversos recursos que o framework AngularJS dispõe, tais como, componentes, controllers, templates, diretivas, databinding, routes, services, etc; e também foram utilizados observables com RXJS; requisições http assincronas; autenticação via Firebase; recursos do HTML e CSS e seus frameworks seguindo o mobile first e responsive layout, entre outras tecnologias. No ambiente de teste foram utilizados o Karma, Jasmin e Angular Mocks.
 
 ## App foi hospedado no heroku
 https://marvelworldapp.herokuapp.com/

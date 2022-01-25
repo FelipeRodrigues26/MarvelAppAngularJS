@@ -20,12 +20,13 @@ function PersonagemService($http, rx) {
  
  
   // Obtem todos os personagens
-  this.getPersonagens = function() {
+  this.getPersonagens = function(page) {
+    var offSet = page*20;
     var req = {
       method: 'GET',
       url: url,
       headers: headers,
-      params: params,
+      params: {...params, 'offset': offSet}
      } 
 
      return rx.Observable
@@ -38,12 +39,13 @@ function PersonagemService($http, rx) {
   }
  
   // Obtem todos os por nome
-  this.getPersonagensByName = function(name) {
+  this.getPersonagensByName = function(name, page) {
+    var offSet = page*20;
     var req = {
       method: 'GET',
       url: url,
       headers: headers,
-      params: {...params, 'nameStartsWith':name }
+      params: {...params, ...{'nameStartsWith':name, 'offset': offSet } }
     }
      
     return rx.Observable
@@ -54,13 +56,13 @@ function PersonagemService($http, rx) {
   }
  
   // Obtem um personagem pelo id
-  this.getPersonagemById = function(id){
-    
+  this.getPersonagemById = function(id, page){
+    var offSet = page*20
     var req = {
       method: 'GET',
       url: url+"/"+id,
       headers: headers,
-      params: params
+      params: {...params, 'offset': offSet }
     }
      
     return rx.Observable
@@ -70,13 +72,13 @@ function PersonagemService($http, rx) {
     .map(function(response){ return response.data});  
   }
  
-  this.getQuadrinhosById = function(id){
-    
+  this.getQuadrinhosById = function(id, page){
+    var offSet = page*20
     var req = {
       method: 'GET',
       url: url+ '/' + id+'/comics',
       headers: headers,
-      params: params
+      params: {...params, 'offset': offSet }
     }
      
     return rx.Observable
@@ -86,13 +88,13 @@ function PersonagemService($http, rx) {
     .map(function(response){ return response.data});  
   }
  
-  this.getSeriesQuadrinhosById = function(id) {
- 
+  this.getSeriesQuadrinhosById = function(id, page) {
+    var offSet = page*20
     var req = {
       method: 'GET',
       url: url+ '/' + id+'/series',
       headers: headers,
-      params: params
+      params: {...params, 'offset': offSet }
     }
      
     return rx.Observable
@@ -104,12 +106,13 @@ function PersonagemService($http, rx) {
   }
   
  
-  this.getHistoriasQuadrinhosById = function(id) {
+  this.getHistoriasQuadrinhosById = function(id, page) {
+    var offSet = page*20
     var req = {
       method: 'GET',
       url: url+ '/' + id+'/stories',
       headers: headers,
-      params: params
+      params: {...params, 'offset': offSet }
     }
      
     return rx.Observable
@@ -119,18 +122,6 @@ function PersonagemService($http, rx) {
     .map(function(response){ return response.data});  
   
   }
-  // // Manipulação de erros
-  // this.handleError = function(error) {
-  //   let errorMessage = '';
-  //   if (error.error instanceof ErrorEvent) {
-  //     // Erro ocorreu no lado do client
-  //     errorMessage = error.error.message;
-  //   } else {
-  //     // Erro ocorreu no lado do servidor
-  //     errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
-  //   }
-  //    (errorMessage);
-  //   return throwError(() =>errorMessage);
-  // };
+
 
 }

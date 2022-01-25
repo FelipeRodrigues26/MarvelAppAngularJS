@@ -75,6 +75,9 @@ button{
 button:hover{
   color:black;
 }
+.card .card-footer a{
+  color: red !important;
+}
 
 #poder{
       color: red;
@@ -185,11 +188,11 @@ button:hover{
   a:visited,
   a:hover {
     color: #ffffff;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
   a:hover {
-    color: #707479;
+    color: #000000 !important
   }
 
 /*lista personagens css*/
@@ -234,7 +237,11 @@ button:hover{
     #charactListCard {
       width: 35rem !important;
     }
+    #charactListCard li {
+     display: block !important;
+     }
     #charactListCard a {
+      align-items: right !important;
       float: right !important;
     }
   }

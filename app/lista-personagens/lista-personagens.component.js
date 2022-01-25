@@ -3,39 +3,61 @@ angular.module('marvelApp')
 .component('listaPersonagensComponent', {
   templateUrl: '../lista-personagens/lista-personagens.component.html',
   controller: ['PersonagemService', ListaPersonagensController],
-});
+})
 
 function ListaPersonagensController(PersonagemService){
+
   subscriptionPersonagens = null;
   this.personagem;
   this.personagens = [];
   this.results = null;
   this.searchName = '';
+  this.totalPages = 0
+  this.currentPage = 0;
   
   this.$onInit = function() {
-    this.getPersonagens();
+    this.getPersonagensByName(this.searchName, this.currentPage);
   };
 
-  this.getPersonagens = function(){
-      subscriptionPersonagens = PersonagemService.getPersonagens().subscribe((response) => {
+  this.search = function(){
+    this.currentPage = 0;
+    this.getPersonagensByName(this.currentPage);   
+  }
+
+  this.getPersonagens = function(page){
+      subscriptionPersonagens = PersonagemService.getPersonagens(page).subscribe((response) => {
+      console.log(response.data)
       this.personagens = response.data.results
-      this.results = this.personagens.length;
+      this.results = response.data.total;
+      this.totalPages = Number.parseInt(this.results/20)+1
     });
   }
 
-  this.getPersonagensByName = function() {
+  this.getPersonagensByName = function(page) {
     
     if (this.searchName == '')
-      return this.getPersonagens();
+      return this.getPersonagens(page);
 
-    subscriptionPersonagens = PersonagemService.getPersonagensByName(this.searchName).subscribe((response) => {
+    subscriptionPersonagens = PersonagemService.getPersonagensByName(this.searchName, page).subscribe((response) => {
+    console.log(response.data)
     this.personagens = response.data.results
-    this.results = this.personagens.length;
+    this.results = response.data.total;
+    this.totalPages = Number.parseInt(this.results/20)+1
     
     });
-    this.searchName = '';
-
   }
- 
+  this.nextPage = function(){
+    if(this.currentPage+1 >= Number.parseInt(this.results)/20)
+      return;
+    this.currentPage = this.currentPage+1;
+    this.getPersonagensByName(this.currentPage)
+  }
+  this.previousPage = function(){
+    if(this.currentPage<1)
+      return;
+
+    this.currentPage = this.currentPage-1;
+    this.getPersonagensByName(this.currentPage)
+  }
 
 }

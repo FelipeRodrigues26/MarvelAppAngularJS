@@ -21,10 +21,10 @@
     </div>
     <div class="card-footer">
 
-        <pre>Página {{$ctrl.currentPage+1}} de {{$ctrl.totalPages}}</pre> 
+        <preng ng-if="$ctrl.results">Página {{$ctrl.currentPage+1}} de {{$ctrl.totalPages}}</pre> 
 
-        <button class="btn btn-lg btn-dark" ng-click="$ctrl.nextPage()">próxima</button>
-        <button ng-style="{'float': 'right'}" class="btn btn-lg btn-dark" ng-click="$ctrl.previousPage()">anterior</button>
+        <button ng-if="$ctrl.results" class="btn btn-dark" ng-click="$ctrl.previousPage()">anterior</button>
+        <button ng-if="$ctrl.results" ng-style="{'float': 'right'}" class="btn btn-dark" ng-click="$ctrl.nextPage()">próxima</button>
         
     </div>
 </div>

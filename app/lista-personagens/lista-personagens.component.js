@@ -47,7 +47,7 @@ function ListaPersonagensController(PersonagemService){
     });
   }
   this.nextPage = function(){
-    if(this.currentPage+1 >= Number.parseInt(this.results)/20)
+    if(this.currentPage+1 >=  this.totalPages)
       return;
     this.currentPage = this.currentPage+1;
     this.getPersonagensByName(this.currentPage)

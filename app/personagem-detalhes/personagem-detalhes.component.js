@@ -39,33 +39,50 @@ angular.module('marvelApp')
 
 .component('modalComponent', {
   template:
+    
     '<div class="modal-header">' +
     '<h4 class="modal-title" id="modal-basic-title">{{$ctrl.personagem.name}}</h4>' +
     '</div>' +
     '<div class="modal-body">' +
-    '<h6 class="modal-title" id="modal-basic-title">Séries</h6>' +
-
-    '<p ng-repeat="item in $ctrl.series">' +
-    '- {{item.title}}' +
-    '</p>' +
-
-    ' <h6 class="modal-title" id="modal-basic-title">Histórias</h6>' +
-    '<p ng-repeat="item in $ctrl.stories">' +
-    '- {{item.title}}' +
-    '</p>' +
+    '<h4 class="modal-title" id="modal-basic-title">Séries</h4>' +
+    '<ul class="list-group" ng-repeat="item in $ctrl.series">'+
+    '<li class="list-group-item d-flex flex-row">' +
+    ' {{item.title}}' +
+    '</li>' +
+    '</ul>'+
+    '<pre ng-if="$ctrl.resultsSeries"> Página {{$ctrl.currentPageSeries+1}} de {{$ctrl.totalPagesSeries}}</pre>'+
+    '<span ng-if="!$ctrl.resultsSeries">Sem resultados de séries</span>'+
+    '<button ng-show="$ctrl.resultsSeries" class="btn btn-dark" ng-click="$ctrl.previousPageSeries()">anterior</button>'+
+    '<button  ng-show="$ctrl.resultsSeries" style="float: right" class="btn btn-dark" ng-click="$ctrl.nextPageSeries()">próxima</button>'+
+    '<h4 class="modal-title" style="margin-top:1rem" id="modal-basic-title">Histórias</h4>' +
+    '<ul class="list-group" ng-repeat="item in $ctrl.stories">'+
+    '<li class="list-group-item d-flex flex-row">' +
+    ' {{item.title}}' +
+    '</li>' +
+    '</ul>'+
+    '<pre ng-show="$ctrl.resultsStories">Página {{$ctrl.currentPageStories+1}} de {{$ctrl.totalPagesStories}}</pre>'+
+    '<span ng-show="!$ctrl.resultsStories">Sem resultados de stories</span>'+
+    '<button ng-show="$ctrl.resultsStories" class="btn btn-dark" ng-click="$ctrl.previousPageStories()">anterior</button>'+
+    '<button ng-show="$ctrl.resultsStories" style="float: right" class="btn btn-dark" ng-click="$ctrl.nextPageStories()">próxima</button>'+
     '</div>' +
     '<div class="modal-footer">' +
-    '<button class="btn btn-dark" type="button" ng-click="$ctrl.ok(sm)">OK</button>' +
-    '</div>' +
+    '<button class="btn btn-dark" type="button" ng-click="$ctrl.ok(sm)"> - fechar </button>' +
     '</div>',
   bindings: {
     resolve: '<',
-    close: '&',
+    close: '&', 
     dismiss: '&'
   },
   controller: ['PersonagemService', '$routeParams', function ModalController(PersonagemService, $uibModalInstance) {
     this.series = [];
     this.stories = [];
+    this.resultsSeries = null;
+    this.resultsStories = null;
+    this.totalPagesSeries = 0;
+    this.totalPagesStories = 0;
+    this.currentPageSeries = 0;
+    this.currentPageStories = 0;
+    
     this.$onInit = function () {
       this.personagem = this.resolve.personagem;
       this.getSeriesById(Number.parseInt(this.personagem.id));
@@ -73,17 +90,18 @@ angular.module('marvelApp')
     }
 
     this.getSeriesById = function (id) {
-      subscriptionPersonagens = PersonagemService.getSeriesQuadrinhosById(id).subscribe((response) => {
+      subscriptionPersonagens = PersonagemService.getSeriesQuadrinhosById(id, this.currentPageSeries).subscribe((response) => {
         this.series = response.data.results
-
-
+        this.resultsSeries = response.data.total;
+        this.totalPagesSeries = Number.parseInt(this.resultsSeries/20)+1
       });
     }
 
     this.getStoriesById = function (id) {
-      subscriptionPersonagens = PersonagemService.getHistoriasQuadrinhosById(id).subscribe((response) => {
+      subscriptionPersonagens = PersonagemService.getHistoriasQuadrinhosById(id, this.currentPageStories).subscribe((response) => {
         this.stories = response.data.results
-  
+        this.resultsStories = response.data.total;
+        this.totalPagesStories = Number.parseInt(this.resultsStories/20)+1
       });
     }
 
@@ -95,6 +113,31 @@ angular.module('marvelApp')
       this.dismiss({$value: 'cancel'});
     };
 
+    this.nextPageStories = function(){
+      if(this.currentPageStories+1 >= this.totalPagesStories)
+        return;
+      this.currentPageSeries = this.currentPageSeries+1;
+      this.getStoriesById(this.currentPageSeries)
+    }
+    this.previousPageStories = function(){
+      if(this.currentPageSeries<1)
+        return;
+      this.currentPageSeries = this.currentPageSeries-1;
+      this.getStoriesById(this.currentPageSeries)
+    }
+
+    this.nextPageStories = function(){
+      if(this.currentPageStories+1 >= this.totalPagesStories)
+        return;
+      this.currentPageStories = this.currentPageStories+1;
+      this.getStoriesById(this.personagem.id)
+    }
+    this.previousPageStories = function(){
+      if(this.currentPageStories<1)
+        return;
+      this.currentPageStories = this.currentPageStories-1;
+      this.getStoriesById(this.personagem.id)
+    }
   }]
 });
 

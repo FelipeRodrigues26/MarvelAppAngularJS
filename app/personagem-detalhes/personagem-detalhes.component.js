@@ -121,7 +121,7 @@ angular.module('marvelApp')
       if(this.currentPageSeries+1 >= this.totalPagesSeries)
         return;
       this.currentPageSeries = this.currentPageSeries+1;
-      this.getSeriesById(this.currentPageSeries)
+      this.getSeriesById(this.personagem.id)
     }
     this.previousPageSeries = function(){
       if(this.currentPageSeries<1)

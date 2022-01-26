@@ -113,17 +113,17 @@ angular.module('marvelApp')
       this.dismiss({$value: 'cancel'});
     };
 
-    this.nextPageStories = function(){
-      if(this.currentPageStories+1 >= this.totalPagesStories)
+    this.nextPageSeries = function(){
+      if(this.currentPageSeries+1 >= this.totalPagesSeries)
         return;
       this.currentPageSeries = this.currentPageSeries+1;
       this.getStoriesById(this.currentPageSeries)
     }
-    this.previousPageStories = function(){
+    this.previousPageSeries = function(){
       if(this.currentPageSeries<1)
         return;
       this.currentPageSeries = this.currentPageSeries-1;
-      this.getStoriesById(this.currentPageSeries)
+      this.getStoriesById(this.personagem.id)
     }
 
     this.nextPageStories = function(){

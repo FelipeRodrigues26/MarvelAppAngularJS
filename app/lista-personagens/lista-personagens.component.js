@@ -11,6 +11,7 @@ function ListaPersonagensController(PersonagemService){
   this.personagem;
   this.personagens = [];
   this.results = null;
+  this.searchName = '';
   this.totalPages = 0
   this.currentPage = 0;
   
@@ -34,7 +35,7 @@ function ListaPersonagensController(PersonagemService){
 
   this.getPersonagensByName = function(page) {
     
-    if (this.searchName)
+    if (this.searchName == '')
       return this.getPersonagens(page);
 
     subscriptionPersonagens = PersonagemService.getPersonagensByName(this.searchName, page).subscribe((response) => {

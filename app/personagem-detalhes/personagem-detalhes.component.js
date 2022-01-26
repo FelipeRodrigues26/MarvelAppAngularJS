@@ -45,7 +45,7 @@ angular.module('marvelApp')
     '</div>' +
 
     '<div class="modal-body">' +
-      '<h4 class="modal-title" id="modal-basic-title">Séries</h4>' +
+      '<a name="series"/><h4 class="modal-title" id="modal-basic-title">Séries</h4>' +
       
        '<ul class="list-group" ng-repeat="item in $ctrl.series">'+
          '<li class="list-group-item d-flex flex-row">' +
@@ -54,10 +54,10 @@ angular.module('marvelApp')
        '</ul>'+
       '<pre ng-if="$ctrl.resultsSeries"> Página {{$ctrl.currentPageSeries+1}} de {{$ctrl.totalPagesSeries}}</pre>'+
       '<span ng-if="!$ctrl.resultsSeries">Sem resultados de séries</span>'+
-      '<button ng-show="$ctrl.resultsSeries" class="btn btn-dark" ng-click="$ctrl.previousPageSeries()">anterior</button>'+
-      '<button  ng-show="$ctrl.resultsSeries" style="float: right" class="btn btn-dark" ng-click="$ctrl.nextPageSeries()">próxima</button>'+
-      '<h4 class="modal-title" style="margin-top:1rem" id="modal-basic-title">Histórias</h4>' +
+      '<a href="#series" ng-show="$ctrl.resultsSeries" class="btn btn-dark" ng-click="$ctrl.previousPageSeries()">anterior</a>'+
+      '<a href="#series" ng-show="$ctrl.resultsSeries" style="float: right" class="btn btn-dark" ng-click="$ctrl.nextPageSeries()">próxima</a>'+
       
+      '<a name="stories"/><h4 class="modal-title" style="margin-top:1rem" id="modal-basic-title">Histórias</h4>' +
       '<ul class="list-group" ng-repeat="item in $ctrl.stories">'+
        '<li class="list-group-item d-flex flex-row">' +
         ' {{item.title}}' +
@@ -65,8 +65,8 @@ angular.module('marvelApp')
       '</ul>'+
       '<pre ng-show="$ctrl.resultsStories">Página {{$ctrl.currentPageStories+1}} de {{$ctrl.totalPagesStories}}</pre>'+
       '<span ng-show="!$ctrl.resultsStories">Sem resultados de stories</span>'+
-      '<button ng-show="$ctrl.resultsStories" class="btn btn-dark" ng-click="$ctrl.previousPageStories()">anterior</button>'+
-      '<button ng-show="$ctrl.resultsStories" style="float: right" class="btn btn-dark" ng-click="$ctrl.nextPageStories()">próxima</button>'+
+      '<a href="#stories" ng-show="$ctrl.resultsStories" class="btn btn-dark" ng-click="$ctrl.previousPageStories()">anterior</a>'+
+      '<a href="#stories" ng-show="$ctrl.resultsStories" style="float: right" class="btn btn-dark" ng-click="$ctrl.nextPageStories()">próxima</a>'+
     '</div>' +
 
     '<div class="modal-footer">' +

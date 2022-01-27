@@ -74,7 +74,7 @@ angular.module('marvelApp')
     '</div>' +
 
     '<div class="modal-footer">' +
-      '<button class="btn btn-dark" type="button" ng-click="$ctrl.ok(sm)"> - fechar </button>' +
+      '<button class="btn btn-dark" type="button" ng-click="$ctrl.ok(sm)"> Close info </button>' +
     '</div>',
   bindings: {
     resolve: '<',

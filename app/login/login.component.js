@@ -6,6 +6,9 @@ angular.module('marvelApp')
   })
 
 function LoginController(AutenticationService, $location){
+ 
+  window.alert('Você precisa logar para acessar os detalhes.');
+
   this.autenticationService = AutenticationService
   this.user = new User("felipemrodrigues26@gmail.com", "123456");
  

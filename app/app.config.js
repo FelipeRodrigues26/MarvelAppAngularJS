@@ -23,8 +23,7 @@ angular.
   .run(function ($rootScope, $location, AutenticationService) {
     $rootScope.$on('$routeChangeStart', function (event, newUrl) {
       if (newUrl.requireAuth && !AutenticationService.isUserLogged()) {
-        window.alert('Você precisa logar para acessar os detalhes.');
-        $location.path('/login');
+         $location.path('/login');
       }
     })
   })

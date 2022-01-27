@@ -19,12 +19,12 @@
         </ul>
         <span ng-if="$ctrl.results==0">Sem resultados</span>
     </div>
-    <div class="card-footer">
+    <div class="card-footer d-flex flex-row align-items-center justify-content-center">
+    
+        <strong ng-if="$ctrl.results">Página {{$ctrl.currentPage+1}} de {{$ctrl.totalPages}}</strong> 
 
-        <preng ng-if="$ctrl.results">Página {{$ctrl.currentPage+1}} de {{$ctrl.totalPages}}</pre> 
-
-        <button ng-if="$ctrl.results" class="btn btn-dark" ng-click="$ctrl.previousPage()">anterior</button>
-        <button ng-if="$ctrl.results" ng-style="{'float': 'right'}" class="btn btn-dark" ng-click="$ctrl.nextPage()">próxima</button>
+        <button ng-if="$ctrl.results" style="margin-left: .3rem;" class="btn btn-dark" ng-click="$ctrl.previousPage()">anterior</button>
+        <button ng-if="$ctrl.results" style="margin-left: .1rem;" class="btn btn-dark" ng-click="$ctrl.nextPage()">próxima</button>
         
     </div>
 </div>

@@ -29,7 +29,7 @@ function ListaPersonagensController(PersonagemService){
       console.log(response.data)
       this.personagens = response.data.results
       this.results = response.data.total;
-      this.totalPages = Number.parseInt(this.results/20)+1
+      this.totalPages = Math.ceil(this.results/20)
     });
   }
 
@@ -42,7 +42,7 @@ function ListaPersonagensController(PersonagemService){
     console.log(response.data)
     this.personagens = response.data.results
     this.results = response.data.total;
-    this.totalPages = Number.parseInt(this.results/20)+1
+    this.totalPages = Math.ceil(this.results/20)
     
     });
   }

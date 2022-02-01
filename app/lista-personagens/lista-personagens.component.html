@@ -1,4 +1,4 @@
-<div class="card" id="charactListCard" ng-style="{'width': '20rem', 'min-width': '20rem', 'margin-top': '5%', 'margin-bottom': '5%'}">
+<div class="card" id="charact-list-card">
     <div id="search">
         <input ng-model="$ctrl.searchName" class="form-control mr-sm-2" type="text" placeholder=" Search"
             aria-label="Search">
@@ -9,10 +9,9 @@
         Lista de Personagem
     </div>
     <div class="card-body">
-        <h5 class="card-title">Marvel World</h5>
         <ul class="list-group" ng-repeat="person in $ctrl.personagens">
             <li class="list-group-item d-flex flex-column">
-                <span class="">{{person.name}}</span>
+                <h6 class="">{{person.name}}</h6>
                 <a class="btn btn-dark" href="#!/personagem/detalhes/{{person.id}}"> Abrir detalhes <i
                         class="fas fa-plus"></i></a>
             </li>

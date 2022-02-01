@@ -4,25 +4,22 @@ angular.module('marvelApp')
   controller: ['$location','AutenticationService', AppComponent],
 });
 
+
 function AppComponent($location, AutenticationService){
-  this.viewWelcome = true;
- 
-  this.$onInit = function() {
-    this.userLogged = AutenticationService.userLogged();
+  
+  this.userLogged = async function (){
+    return await AutenticationService.userLogged();
   }
   
-  
- 
-  this.onViewWelcome = function () {
-    this.viewWelcome = false;
-    this.userLogged = AutenticationService.userLogged();
+  this.$onInit = function() {
+    this.userLogged();
   }
 
   this.logout = function () {
     AutenticationService.signOut();
-    this.viewWelcome = true;
     this.userLogged = false;
     $location.path('/'); 
   }
+
 
 } 

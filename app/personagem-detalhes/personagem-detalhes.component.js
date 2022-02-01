@@ -39,7 +39,7 @@ angular.module('marvelApp')
 
 .component('modalComponent', {
   template:
-    
+  '<div class="info-modal">'+
     '<div class="modal-header">' +
       '<h4 class="modal-title" id="modal-basic-title">{{$ctrl.personagem.name}}</h4>' +
     '</div>' +
@@ -75,7 +75,8 @@ angular.module('marvelApp')
 
     '<div class="modal-footer">' +
       '<button class="btn btn-dark" type="button" ng-click="$ctrl.ok(sm)"> Close info </button>' +
-    '</div>',
+    '</div>'+
+  '</div>',
   bindings: {
     resolve: '<',
     close: '&', 

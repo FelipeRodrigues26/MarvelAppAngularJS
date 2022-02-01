@@ -9,13 +9,8 @@
     padding: 0;
     margin: 0;
 }
-#main {
-  display: grid; 
-  grid-template-areas: "header header" "nav nav" "aside aside";
-} 
 
-.mainHeader {
-  grid-area: header;
+header {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -27,6 +22,7 @@
   border-bottom: 2px solid #b10303;
  
 }
+
 .headerTitulo{
   font-size: 18pt;
   text-align: center;
@@ -42,7 +38,7 @@
   letter-spacing: 5px;
   font-weight: bold;
 }
-.mainHeader h4{
+header h4{
   font-size: 15pt;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
@@ -51,7 +47,7 @@
   color: snow;
   
 }
-.mainHeader #logout{
+header #logout{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -61,6 +57,14 @@
   font-size: 12pt;
   letter-spacing: 2px;
   color: snow;
+}
+
+nav {
+  background: #111111;
+}
+
+nav a{
+  margin-left: .3rem;
 }
 
 .lista button{
@@ -85,15 +89,18 @@ button:hover{
       letter-spacing: 5px;
 }
 
+.content {
+  background-image: linear-gradient(#000000, #000000fa);
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+}
 .welcome { 
-  grid-area: nav;
   background-image: url('../img/fundo.png');
   background-repeat: no-repeat;
   font-size: 16pt;
   color: #e7e6e6;
   font-family: 'Ubuntu',sans-serif;
-  height: 100%;
-  width: 100%;
   padding-top: 8%;
   display: flex;
   flex-direction: column;
@@ -131,58 +138,18 @@ button:hover{
   border: 1px solid rgba(0, 0, 0, 0.452);
       color: rgb(95, 95, 95);
 }
-.mainNav { 
-  grid-area: nav;
-  background-image: linear-gradient(#000000, #000000fa);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  min-height: 95vh;
-  
-}
-
-.mainAside {
-  grid-area: aside;
-  min-height: 15vh;
-  background: #111111;
- text-align: center;
- padding: 3%;
- position: relative;    
-}
-
-
 
 #fire{
       float: right;
       padding: 2px 0px 0px 10px ;
       text-shadow: 0.0em 0.0em 0.4em red;
 }
-  
-.txtRodape, a{
-      color: snow;
-      margin: 0%;
-      padding: 0%;
-      display: inline;
-      font-family: 'Ubuntu', sans-serif; 
-      font-size: 12pt;
-}
-.txtRodape, a:hover{
-      color: #000000;
-}
-  ul, li{
+
+ul, li{
       display: inline;
       margin: 5%;
       text-decoration: none;
 }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
 
   a,
   a:visited,
@@ -195,6 +162,27 @@ button:hover{
     color: #000000 !important
   }
 
+  footer {
+    min-height: 15vh;
+    background: #111111;
+    text-align: center;
+    padding: 3%;
+    position: relative;    
+  }
+
+  .txtRodape, a:hover{
+        color: #000000;
+  }
+
+  .txtRodape, a{
+        color: snow;
+        margin: 0%;
+        padding: 0%;
+        display: inline;
+        font-family: 'Ubuntu', sans-serif; 
+        font-size: 12pt;
+  }
+
 /*lista personagens css*/
 #search{
   margin : 5%;
@@ -205,11 +193,30 @@ button:hover{
   margin-top: 5px;
 }
 
+.card {
+  margin: 5% auto 5% auto !important;
+}
+#charact-list-card {
+  width: 100% !important;
+}
+
+
+/*detalhes personagem css*/
+#person-details-card {
+  width: 80% !important;
+}
+
+
+#login-form{
+  margin: 5% auto 5% auto;
+  width: 70%; 
+}
+
   /* Responsive */
 
   @media screen and (min-width: 575px) {
 
-    .mainHeader h4{
+    header h4{
       font-size: 17pt;
     }
 
@@ -218,31 +225,46 @@ button:hover{
       height: 60px;
       
     }
+    #login-form{
+      width: 50%; 
+    }
+
+    #charact-list-card {
+      width: 35rem !important;
+    }
+    
+    #charact-list-card li {
+      display: block !important;
+    }
+    #charact-list-card a {
+       float: right !important;
+    }
+    
+   #charact-list-card h6 {
+      float: left !important;
+   }
+   
+    #person-details-card {
+      width: 25rem !important;
+    }
   
   }
   @media screen and (min-width: 768px) {
-    .mainHeader {
+    header {
       flex-direction: row;
     }
-    .headerName{
-      flex-direction: row;
-    }
-    .mainHeader #logout{
-      flex-direction: row;
+    
+
+    #login-form{
+      width: 25rem;
     }
    
   }
 
-  @media screen and (min-width: 1024px) {
-    #charactListCard {
-      width: 35rem !important;
-    }
-    #charactListCard li {
-     display: block !important;
-     }
-    #charactListCard a {
-      align-items: right !important;
-      float: right !important;
+  @media screen and (min-width: 920px) {
+
+    #login-form{
+      width: 20rem;
     }
   }
 

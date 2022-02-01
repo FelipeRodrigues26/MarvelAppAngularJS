@@ -5,6 +5,9 @@ angular.
   .config(['$routeProvider', '$locationProvider',
     function config($routeProvider) {
       $routeProvider.
+        when('/welcome', {
+          template: '<welcome-component></welcome-component>' ,
+        }).
         when('/login', {
           template: '<login></login>'
         }).
@@ -16,7 +19,7 @@ angular.
           template: '<personagem-detalhes-component></personagem-detalhes-component>',
           requireAuth: true
         })
-        .otherwise('/')
+        .otherwise('/welcome')
 
     },
   ])

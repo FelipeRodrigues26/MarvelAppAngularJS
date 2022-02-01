@@ -1,5 +1,4 @@
-<div id="person-details">
-  <div class="card" ng-style="{'width': '18rem', 'margin-top': '5%','margin-bottom':'5%'}">
+<div class="card" id="person-details-card">
     <img ng-if="$ctrl.imageUrl" ng-src="{{$ctrl.imageUrl}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h6 class="card-title">Personagem: </h6>
@@ -9,7 +8,7 @@
       <a ng-style="{'float': 'left', 'width': '6rem'}" class="btn btn-lg btn-dark"
       href="#!/personagem/lista">Voltar</a>
       <button style="float: right; width: 6rem;" class="btn btn-lg btn-dark" ng-click="$ctrl.open()">Mais</button>
-    </div>
-  </div>
+</div>
+
  
  

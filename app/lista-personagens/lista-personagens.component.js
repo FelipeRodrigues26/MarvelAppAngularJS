@@ -26,7 +26,6 @@ function ListaPersonagensController(PersonagemService){
 
   this.getPersonagens = function(page){
       subscriptionPersonagens = PersonagemService.getPersonagens(page).subscribe((response) => {
-      console.log(response.data)
       this.personagens = response.data.results
       this.results = response.data.total;
       this.totalPages = Math.ceil(this.results/20)
@@ -39,7 +38,6 @@ function ListaPersonagensController(PersonagemService){
       return this.getPersonagens(page);
 
     subscriptionPersonagens = PersonagemService.getPersonagensByName(this.searchName, page).subscribe((response) => {
-    console.log(response.data)
     this.personagens = response.data.results
     this.results = response.data.total;
     this.totalPages = Math.ceil(this.results/20)

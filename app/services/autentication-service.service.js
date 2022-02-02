@@ -1,9 +1,9 @@
 
 angular.
   module('marvelApp').
-  service('AutenticationService',['$firebaseAuth', 'rx', AutenticationService]);
+  factory('AutenticationService', ['$firebaseAuth', 'rx', AutenticationService]);
 
-function AutenticationService($firebaseAuth,rx) {  
+function AutenticationService($firebaseAuth, rx) {
 
   const initializeApp = {
 
@@ -17,36 +17,29 @@ function AutenticationService($firebaseAuth,rx) {
 
   };
   firebase.initializeApp(initializeApp);
-
-  this.signIn = function (email, password) {
-     try {     
+  return {
+    signIn : function (email, password) {
+      try {
         return firebase.auth().signInWithEmailAndPassword(email, password)
-     } catch (error) {
-      window.alert('Falha no login!')
-     }
-  }
+      } catch (error) {
+        window.alert('Falha no login!')
+      }
+    },
 
-  this.signOut = function () {
-    firebase.auth().signOut().then(
-      () => { console.log("Usuario logout sucess") }
-    ).catch(error =>
-      console.log("Erro ao deslogar" + error)
-    )
-  }
+    signOut : function () {
+      firebase.auth().signOut().then(
+        () => { 
+          console.log("Usuario logout sucess") 
+          window.sessionStorage.removeItem('user')
+        }
+      ).catch(error =>
+        console.log("Erro ao deslogar" + error)
+      )
+    },
 
-  this.isUserLogged = function () {
-    
-    const auth = firebase.auth();
-    if (auth.currentUser) {
-      console.log(auth.currentUser)
-      return true;
-    } else {
-      console.log(auth.currentUser)
-      return false;
+    userLogged : function () {
+     return firebase.auth().currentUser
     }
-  }
 
-  this.userLogged = function () {
-    return firebase.auth().currentUser;
   }
 }

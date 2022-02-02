@@ -262,7 +262,10 @@ ul, li{
   }
 
   @media screen and (min-width: 920px) {
-
+    header #logout{
+      flex-direction: row;
+      
+    }
     #login-form{
       width: 20rem;
     }

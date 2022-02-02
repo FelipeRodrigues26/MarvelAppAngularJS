@@ -6,25 +6,19 @@ angular.module('marvelApp')
   })
 
 function LoginController(AutenticationService, $location){
- 
-  window.alert('Você precisa logar para acessar os detalhes.');
 
-  this.autenticationService = AutenticationService
   this.user = new User("felipemrodrigues26@gmail.com", "123456");
  
   this.signIn = async function() {  
     try {
-      let response = await this.autenticationService.signIn(this.user.email, this.user.pass)
+      let response = await AutenticationService.signIn(this.user.email, this.user.pass)
+      window.sessionStorage.setItem('user', AutenticationService.userLogged().email);
       window.alert('Login realizado com sucesso!')
       window.location.replace('/')
       this.alertVisible = true; 
     } catch (error) {
       window.alert('Erro ao logar! Tente novamente...')
     } 
-  }
-  
-  this.signOut = function(){
-    this.autenticationService.signOut();
   }
 
 }

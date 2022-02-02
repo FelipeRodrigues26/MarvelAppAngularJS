@@ -4,12 +4,14 @@
     </div>
     <h4 class="col-sm-12 col-md-6">descubra o <span id="poder">PODER</span> desse universo.</h4>
     <div class="col-sm-12 col-md-3 " id="logout">
-        <a ng-click="$ctrl.logout()" ng-if="$ctrl.userLogged" class="buttonStyle btn btn-dark"> fazer logout <i
-            class="fas fa-sign-out-alt"></i></a>
+       <div ng-style="{'width': '12rem', 'overflow': 'hidden', 'white-space': 'nowrap',
+       'text-overflow': 'ellipsis', 'font-size': '12px'}">{{$ctrl.userLogged}}</div>
+       <a ng-click="$ctrl.logout()" ng-if="$ctrl.userLogged" class="buttonStyle btn btn-dark"> logout <i class="fas fa-sign-out-alt"></i></a>
     </div>  
 </header>
 <nav>
   <a href="/#!/welcome"><button class="buttonStyle btn btn-dark">Home</button></a>
+  <a href="" class="btn btn-dark">...</a>
 </nav>
 
 <div class="content" ng-view></div>

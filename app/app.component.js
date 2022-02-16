@@ -7,7 +7,7 @@ angular.module('marvelApp')
 function AppComponent($location, AutenticationService){
   
   this.$onInit = function () {
-    this.userLogged = window.sessionStorage.getItem('user');
+    this.userLogged = window.localStorage.getItem('user');
     console.log(this.userLogged)
   }
   

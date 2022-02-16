@@ -12,7 +12,7 @@ function LoginController(AutenticationService, $location){
   this.signIn = async function() {  
     try {
       let response = await AutenticationService.signIn(this.user.email, this.user.pass)
-      window.sessionStorage.setItem('user', AutenticationService.userLogged().email);
+      window.localStorage.setItem('user', AutenticationService.userLogged().email);
       window.alert('Login realizado com sucesso!')
       window.location.replace('/')
       this.alertVisible = true; 

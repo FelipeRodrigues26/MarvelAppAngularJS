@@ -30,7 +30,7 @@ function AutenticationService($firebaseAuth, rx) {
       firebase.auth().signOut().then(
         () => { 
           console.log("Usuario logout sucess") 
-          window.sessionStorage.removeItem('user')
+          window.localStorage.removeItem('user')
         }
       ).catch(error =>
         console.log("Erro ao deslogar" + error)
